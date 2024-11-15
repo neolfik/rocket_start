@@ -1,17 +1,17 @@
 This folder contains the full code necessary to solve problem of rocket start in one dimension and in a homogeneous gravitational field analytically and numerically using purely python.
 
 
-Constants and problem instructions
+# Constants and problem instructions
 
 The constants needed for the analytical and numerical solution are in file equation_constants.py. There is also a parameter scale that scales the results to accommodate different units, if you change it you need to change the labeling of y axis of the solution graph in rocket_start.py when plotting the solution.
 
 
-Finding the solution
+# Finding the solution
 
 The function you need to call for solving the system is rocket_start.py. It contains the final usage of methods defined in folder ./solving/, if you don't change the scale there should be no need to change the program for successful solution. In this file all numerical methods used from pythons libraries, LSODA, Euler(BDF) and Runge-Kutta 4(5), are called with a parameter, that is number of steps you want the function to take, be aware that all listed methods are adaptive so they will most likely internally alter the number of steps they take. Lastly custom version of Heun method is called it has two parameters and that are in order number of steps and a weight coefficient in interval [0,1), one is excluded because of the nature of the computation. The weight coefficient can be out of the defined interval, called function will try to interpret it so that the coefficient falls into designated interval, but it may not have the intended value. The reason the coefficient is used so that you can alter the weight of Euler approximation and subsequent approximation of step in the analyzed function. This has value only because we can determine the optimal value of gamma when compared to analytical solution easily.
 
 
-Folder ./solving/
+# Folder ./solving/
 
 This folder contains all function necessary for both analytical and numerical solution of the problem.
 
@@ -22,7 +22,7 @@ In file numerical_solution.py numerical methods from python libraries are called
 In file heun.py is a custom Heun method dependent on number of steps it needs to take and a weight coefficient discussed above and in the respective file.
 
 
-Folder ./relative_error_assesment/
+# Folder ./relative_error_assesment/
 
 In this folder are files that are not called by the rocket_start.py and you need to call them separately. They are used to find relative error of used method compared to analytical solution. This can be only done because the analytical solution exist. The relative errors are plotted on a log10 scale so we can compare them easier and tha graph has a good shape.
 
@@ -33,8 +33,9 @@ In file heun_error_evaluation.py relative error of custom Heun function is compu
 In minimize_heun.txt are results of heun_error_evaluation.py run previously, the format of the file is not great but saves previously computed values for comparison, since the values can differ a little even if you run the program multiple times with same initial parameters.
 
 
-Folder ./project_figures/
+# Folder ./project_figures/
 
 In this folder are graphs used in the final report and are computed for higher number of steps in error assessment so you can pull them up and don't need to run the error assessment itself
 
+# Report file
 The only .pdf file contains the summary of the solution of this problem and theory of the used methods.
