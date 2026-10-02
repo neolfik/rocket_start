@@ -1,4 +1,7 @@
-This folder contains the full code necessary to solve the problem of a rocket start in one dimension and in a homogeneous gravitational field analytically and numerically using purely Python.
+This folder contains the full code necessary to solve the problem of a rocket start in one dimension and in a homogeneous gravitational field analytically and numerically using Python. 
+
+# Used packages
+On top of Python, the Numpy and Scipy packages are used for numerical methods; Sympy is used to create analytical solutions for defined parameters; Matplotlib is used to visualise the results graphically; and the Concurrent futures package is used to parallelise computation to save time.
 
 
 # Constants and problem instructions
